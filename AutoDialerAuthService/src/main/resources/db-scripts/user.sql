@@ -1,22 +1,32 @@
+show DATABASES;
+create database autodialerdb;
+USE autodialerdb;
+
+
 create database autodialeralpha;
 USE autodialeralpha
 
 create table if not exists `oauth_user`(
-`user_id` bigint(20) not null  auto_increment  ,
+`user_id` bigint(20) not null  AUTO_INCREMENT  ,
+`username` varchar (255)  not  NULL ,
 `email` varchar (255) not  null ,
 `phone_number` varchar (255) not  NULL ,
-`first_name` varchar (255)  not  null ,
-`last_name` varchar (255) not  null ,
+`first_name` varchar (255)  not  NULL ,
+`middle_name` varchar (255)   null ,
+`last_name` varchar (255)   NULL ,
+`password` varchar (255) not  null ,
 `created_at` timestamp,
 `updated_at` timestamp,
 primary  key (user_id) using  btree ,
 unique  index  oauth_user_phone_email(phone_number,email) using  btree 
 )
 
+Drop table oauth_user
 
 CREATE TABLE IF NOT EXISTS `user_licence`(
 `user_licence_id` bigint(20) NOT NULL AUTO_INCREMENT  ,
 `user_id` bigint(20) NULL,
+`user_licence` varchar (255) not  NULL ,
 `active` TINYINT(1) NOT NULL DEFAULT '0' ,
 `created_at` TIMESTAMP ,
 `updated_at` TIMESTAMP ,
