@@ -9,4 +9,9 @@ eureka:
 
 spring:
   application:
-    name: user-management      
+    name: user-management  
+ 
+ 
+  cloud:
+    discovery:
+      enabled: true  
