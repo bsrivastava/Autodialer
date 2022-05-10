@@ -11,5 +11,3 @@ class AutoDialerServicesApplicationTests {
 	}
 
 }
-#Just testing
-#Just testing
