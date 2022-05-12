@@ -1,19 +1,62 @@
+server:
+  port: 8081
+  servlet:
+      context-path: /auth
+spring:
+  application:
+    name: user-management
+  main:
+    allow-bean-definition-overriding: true
+
+#  autoconfigure:
+#      exclude: org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
+
+#  datasource:
+#    url: jdbc:${dbType}://${dbIP}:${dbPort}/${dbName}
+#    username: ${dbUser}
+#    password: ${dbPass}
+#    driver-class-name: org.${dbType}.jdbc.Driver
+
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
+       defaultZone: http://localhost:8761/eureka
+#      defaultZone: http://${eurekaServerIp}:${eurekaServerPort}/eureka
+#  instance:
+#    hostname: localhost
 
-spring:
-  application:
-    name: user-managements  
- 
- 
-  cloud:
-    discovery:
-      enabled: true  
+
+
+
   
-  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+#spring.datasource.url=jdbc:mysql://localhost:3306/learningpath
+##spring.datasource.username=root
+#spring.datasource.password=shivendra
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.hibernate.naming-strategy=org.hibernate.cfg.ImprovedNamingStrategy
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+#spring.jpa.show-sql=true
+#
+#resilience4j.retry.instances.sample-api.maxRetryAttempts=16
+#resilience4j.retry.instances.sample-api.wait-duration=2s
+#resilience4j.retry.instances.sample-api.enable-exponential-backoff=true
+#
+#resilience4j.ratelimiter.instances.sample-api.limit-for-period=2
+#resilience4j.ratelimiter.instances.sample-api.limit-refresh-period=10
+#
+#resilience4j.bulkhead.instances.sample-api.maxConcurrentCalls=10
+#
+#
+#
+#
+#eureka.client.service-url.defaultzone=http://localhost:8761/eureka  
+#  
