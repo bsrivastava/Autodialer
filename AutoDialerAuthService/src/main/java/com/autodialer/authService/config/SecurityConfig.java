@@ -38,10 +38,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	 return new BCryptPasswordEncoder();
  }
 
-//	@Bean
-//	public PasswordEncoder PasswordEncoder() {
-//		return NoOpPasswordEncoder.getInstance();
-//	}
 
 	@Bean
 	@Override
@@ -51,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().antMatchers("/manage/**").permitAll().anyRequest().authenticated()
+		http.csrf().disable().authorizeRequests().antMatchers("/authenticate").permitAll().antMatchers("/createuser").permitAll().anyRequest().authenticated()
 				.and().exceptionHandling().and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);

@@ -11,7 +11,7 @@ spring:  application:    name: API GATEWAY
         enabled : false    gateway:
       routes:      - id: user-service
         uri: lb://user-management
-        predicates:        - Path=/user/**
+        predicates:        - Path=/auth/**
       - id: job-service
         uri: lb://job-portal
         predicates:

@@ -8,6 +8,6 @@ import com.autodialer.authService.entity.UserAccount;
 @Repository
 public interface UserAccountRepository extends JpaRepository<UserAccount, Long> {
 
-	UserAccount findByUserName(String username);
+	UserAccount findByUsername(String username);
 
 }

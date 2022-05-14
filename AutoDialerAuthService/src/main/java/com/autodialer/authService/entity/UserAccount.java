@@ -59,7 +59,7 @@ public class UserAccount {
 	
 	private String lastName;
 	
-	private String userName;
+	private String username;
 	
 	private Date createdAt;
 	
